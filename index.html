@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nothing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="tocenter">
+        <div class="imagse">
+            <img src="SAO_Man.png" alt="Description of image" id="side-image">
+        </div>
+        <div id="sao-ui">
+            <!-- Adding buttons with sound effect -->
+            <button class="image-button" data-heading="Challenge" data-message="This project showcases an interactive web-based user interface inspired by *Sword Art Online*. It features engaging elements like image buttons that trigger modals with additional content, along with immersive sound effects enhancing user interactions. The design is fully responsive, ensuring a seamless experience on both desktop and mobile devices. Built using HTML, CSS, and JavaScript, it incorporates swipe navigation for easy access on touch devices. Users are encouraged to contribute, whether through suggestions or improvements. If you have any questions or feedback, please feel free to reach out via GitHub. Your insights are valuable in making this project even better!" onclick="playSound()">
+                <img src="Config.png" alt="Button 1" class="button-image">
+            </button>
+            <button class="image-button" data-heading="Challenge" data-message="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." onclick="playSound()">
+                <img src="Man.png" alt="Button 2" class="button-image">
+            </button>
+            <button class="image-button" data-heading="Challenge" data-message="Having Fun ???" onclick="playSound()">
+                <img src="Message.png" alt="Button 3" class="button-image">
+            </button>
+        </div>
+    </div>
+
+    <!-- Add an audio element to hold the sound effect -->
+    <audio id="buttonSound" src="Selection Sound Effect _ Sword Art Online(Sao).mp3" preload="auto"></audio>
+    <audio id="acceptSound" src="Selection Sound Effect _ Sword Art Online(Sao).mp3" preload="auto"></audio>
+<audio id="declineSound" src="Selection Sound Effect _ Sword Art Online(Sao).mp3" preload="auto"></audio>
+<audio id="slideDownSound" src="Sword art Online _ Open menu Sound Effect.mp3" preload="auto"></audio>
+
+
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript function to play the sound
+        function playSound() {
+            const sound = document.getElementById("buttonSound");
+            sound.play();
+        }
+    </script>
+</body>
+
+</html>
