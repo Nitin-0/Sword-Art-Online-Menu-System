@@ -63,20 +63,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
-
+// Folder that holds the skill images (plain name = default, _on = active)
+const SKILL_IMG_DIR = 'userSkills/';
+const skillImg = (file) => SKILL_IMG_DIR + file;
 const circleContent = [
-    { id: 1, icon: 'TwoSwardsGray.png', iconActive: 'TwoSwards.png', title: 'Search', description: "Description 1" },
-    { id: 2, icon: 'TwoSwardsGray.png', iconActive: 'TwoSwards.png', title: 'Herb', description: "Description 2" },
-    { id: 3, icon: 'TrackingGray.png', iconActive: 'Tracking.png', title: 'Tracking', description: "Description 3" },
-    { id: 4, icon: 'PersecutionGray.png', iconActive: 'Persecution.png', title: 'Persecution', description: "Description 4" },
-    { id: 5, icon: 'SwardGray.png', iconActive: 'Sward.png', title: 'One-handed straight sword', description: "Description 5" },
-    { id: 6, icon: 'TwoSwardsGray.png', iconActive: 'TwoSwards.png', title: 'Two Swords (Unique Skill)', description: "A skill that allows you to attack with two swords at the same time\nBonus to attack speed: 1.80\nBonus to protection against weapons\nCooldown bonus" },
-    { id: 7, icon: 'ThrowingaswordGray.png', iconActive: 'Throwingasword.png', title: 'Throwing a sword', description: "Description 7" },
-    { id: 8, icon: 'ProtectionGray.png', iconActive: 'Protection.png', title: 'Protection', description: "Description 8" },
-    { id: 9, icon: 'MilitaryRecoveryGray.png', iconActive: 'MilitaryRecovery.png', title: 'Military recovery', description: "Description 9" },
-    { id: 10, icon: 'TwoSwardsGray.png', iconActive: 'Protection.png', title: 'Combat medicine', description: "Description 10" },
-    { id: 11, icon: 'TwoSwardsGray.png', iconActive: 'Protection.png', title: 'Night vision', description: "Description 11" },
-    { id: 12, icon: 'TwoSwardsGray.png', iconActive: 'Protection.png', title: 'Disguise', description: "Description 12" },
+ { id: 1, icon: 'TwoSwards.png', iconActive: 'TwoSwards_on.png', title: 'Search', description: "Description 1" },
+ { id: 2, icon: 'TwoSwards.png', iconActive: 'TwoSwards_on.png', title: 'Herb', description: "Description 2" },
+ { id: 3, icon: 'Tracking.png', iconActive: 'Tracking_on.png', title: 'Tracking', description: "Description 3" },
+ { id: 4, icon: 'Persecution.png', iconActive: 'Persecution_on.png', title: 'Persecution', description: "Description 4" },
+ { id: 5, icon: 'Sward.png', iconActive: 'Sward_on.png', title: 'One-handed straight sword', description: "Description 5" },
+ { id: 6, icon: 'TwoSwards.png', iconActive: 'TwoSwards_on.png', title: 'Two Swords (Unique Skill)', description: "A skill that allows you to attack with two swords at the same time\nBonus to attack speed: 1.80\nBonus to protection against weapons\nCooldown bonus" },
+ { id: 7, icon: 'Throwingasword.png', iconActive: 'Throwingasword_on.png', title: 'Throwing a sword', description: "Description 7" },
+ { id: 8, icon: 'Protection.png', iconActive: 'Protection_on.png', title: 'Protection', description: "Description 8" },
+ { id: 9, icon: 'MilitaryRecovery.png', iconActive: 'MilitaryRecovery_on.png', title: 'Military recovery', description: "Description 9" },
+ { id: 10, icon: 'TwoSwards.png', iconActive: 'Protection_on.png', title: 'Combat medicine', description: "Description 10" },
+ { id: 11, icon: 'TwoSwards.png', iconActive: 'Protection_on.png', title: 'Night vision', description: "Description 11" },
+ { id: 12, icon: 'TwoSwards.png', iconActive: 'Protection_on.png', title: 'Disguise', description: "Description 12" },
 ];
 
 const totalCircles = 12;
@@ -114,11 +116,12 @@ const handleCircleClick = (circleId) => {
 
 // Update the description and icon of the selected circle
 const updateSelectedCircle = (circle) => {
-    selectedTitle.textContent = circle.title;
-    selectedDescription.innerHTML = circle.description.split('\n').join('<br />');
-    
-    // Set the icon with the SVG (you can use a static or dynamic SVG based on the content)
-    iconElement.innerHTML = `<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="circle" class="svg-inline--fa fa-circle css-8zjzib" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512z"></path></svg>`;
+selectedTitle.textContent = circle.title;
+selectedDescription.innerHTML = circle.description.split('\n').join('<br />');
+
+// Show the image of the selected skill
+iconElement.src = skillImg(circle.icon);
+iconElement.alt = circle.title;
 };
 
 // Update the colors of all circles

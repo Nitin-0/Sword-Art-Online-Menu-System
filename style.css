@@ -251,7 +251,14 @@ body {
     /* width: 300px; */
 }
 
-.icon {
+/* .icon {
     width: 45px;
     height: 45px;
+} */
+
+.icon,
+.card1.icon {
+width: 45px;
+height: 45px;
+filter: none; /* override the grayscale from .card1 img */
 }
