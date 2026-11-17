@@ -105,6 +105,7 @@ body {
     overflow-y: scroll;
     max-height: 300px;
     scrollbar-width: none;
+    width: 88%;
 }
 
 .card2{
@@ -262,3 +263,7 @@ width: 45px;
 height: 45px;
 filter: none; /* override the grayscale from .card1 img */
 }
+
+/* .card2 h2{
+      white-space: nowrap;
+} */
