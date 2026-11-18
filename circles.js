@@ -20,7 +20,7 @@ const angleIncrement = (2 * Math.PI) / totalCircles;
 let selectedCircleId = 1;  // default selected circle ID
 let userInteracted = false;
 let isPlayingSound = false;
-const audio = new Audio('Assets/SAO_Menu_SFX.mp3');
+// const audio = new Audio('Assets/SAO_Menu_SFX.mp3');
 
 const circleItemsContainer = document.querySelector('.circle-items');
 const selectedTitle = document.getElementById('selected-title');

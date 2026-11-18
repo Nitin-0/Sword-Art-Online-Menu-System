@@ -75,7 +75,6 @@ body {
 .card1 img {
     width: 45px;
     height: 45px;
-    filter: grayscale(1);
 }
 .card1:hover{
     cursor: pointer;
@@ -120,7 +119,6 @@ body {
 .card2 img {
     width: 45px;
     height: 45px;
-    filter: grayscale(1);
 }
 .card2:hover{
     cursor: pointer;
